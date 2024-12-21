@@ -1,0 +1,223 @@
+#container{
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+}
+
+body{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+.bar{
+    width: 20px;
+    background-color: #86c596;
+    margin: 1.5px;
+}
+
+h1 {
+    font-size: 30px;     
+    font-family: 'Courier New', Courier, monospace;
+    color: #161b17;     
+}
+
+p1 {
+
+    font-size: 15px;     
+    font-family:Arial, Helvetica, sans-serif;
+    color: #161b17; 
+
+}
+
+p {
+
+    font-size: 15px;     
+    font-family:Arial, Helvetica, sans-serif;
+    color: #161b17;
+
+}
+
+#infoForm {
+    text-align: center; 
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    background-color: white; 
+    color: black;     
+}
+  
+button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+#result{
+
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+#result_table {
+
+    width: 70%; /* Set the width of the div */
+    margin: 0 auto; /* Horizontally center the div */
+    text-align: center; /* Align the text inside the div, optional */
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: none;
+  }
+  
+th, td {
+    text-align: left;
+    padding: 15px;
+    border: none;
+}
+  
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+/* Play button style */
+.play-button {
+    background-color: #88f4f4; /* Green background */
+    border: none; /* No border */
+    padding: 15px; /* Padding for the button */
+    border-radius: 50%; /* Make the button round */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover effect */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px; /* Width of the button */
+    height: 20px; /* Height of the button */
+
+    /* Add the following for right-side positioning */
+    position:absolute; /* Sticks to a position relative to the viewport */
+    right: 150px; /* Distance from the right edge of the screen */
+    top: 225px; /* Distance from the bottom edge */
+}
+
+/* Hover effect */
+.play-button:hover {
+    background-color: #1feeee; /* Darker green on hover */
+}
+
+canvas {
+    width: 1300px ;  
+    height: 500px ;  
+    margin: 0 auto;
+    display: block;
+    background-color: #ffffff;  
+    border-radius: 15px;  
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  
+    padding: 20px;
+}
+
+.graph-container {
+    margin-top: auto; /* Push this container to the bottom */
+    display: flex; /* Use flexbox to center the button */
+    justify-content: center; /* Center horizontally */
+    padding: 20px; /* Add padding */
+}
+
+.graphbutton {
+    margin: 20px auto; /* Center the graph button */
+}
+
+.sidebar {
+    opacity: 65%;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    padding-top: 60px;
+    padding-left: 20px;
+    transition: 0.3s ease-in-out;
+    z-index: 2000;
+    border-right: 4px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 0 10px 10px 0;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar a {
+    display:block;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    font-family:cursive;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.sidebar a:hover {
+    background-color: rgba(237, 211, 211, 0.2);
+}
+
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    color: "teal";
+    background: none;
+    border: none;
+    cursor: pointer; 
+    z-index: 1500;
+}
+
+/* Fullscreen overlay when image is shown */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the image */
+.overlay img {
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 10px;
+}
+
+/* Close button style (cross) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: rgb(2, 2, 2);
+    cursor: pointer;
+}

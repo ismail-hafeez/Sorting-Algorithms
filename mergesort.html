@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merge Sort Algorithm</title>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        .slidecontainer {
+            width: 70%;
+            margin: 20px auto;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+        p {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Merge Sort Algorithm</h1>
+
+    <button class="menu-icon" id="menu-icon">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="insertionsort.html">Insertion Sort</a>
+        <a href="bubblesort.html">Bubble Sort</a>
+        <a href="selectionSort.html">Selection Sort</a>
+        <a href="mergesort.html">Merge Sort</a>
+        <a href="quicksort.html">Quick Sort</a>
+        <a href="heapsort.html">Heap Sort</a>
+        <a href="radixcount.html">Radix Sort</a>
+        <a href="countsort.html">Count Sort</a>
+        <a href="bucketsort.html">Bucket Sort</a>
+        <a href="empirical.html">Empirical Analysis</a>
+    </div>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+
+        menuIcon.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+
+        // sidebar closed when clicked outside the
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+
+    <form id="infoForm">
+        <div class="slidecontainer">
+            <input type="range" min="10" max="80" value="45" class="slider" id="sizeSlider">
+            <p><span id="sliderValue">45</span></p>
+        </div>
+        
+        <button type="button" onclick="generateArray()">Generate Array</button> 
+        <button type="button" onclick="sortMerge()">Sort</button>        
+    </form>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="container"></div>
+
+    <hr>
+    <div id="result" style="padding-left: 20px;"></div>
+    
+
+    <script src="mergeScript.js"></script>
+
+    <script>
+        // Get slider element and output display
+        var slider = document.getElementById("sizeSlider");
+        var output = document.getElementById("sliderValue");
+
+        // Display initial slider value
+        output.innerHTML = slider.value;
+
+        // Update the slider value dynamically
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
+
+</body>
+</html>

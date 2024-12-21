@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algo Assignment</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>      
+ 
+</head>
+<body>
+
+    <h1>Empirical Analysis</h1>
+    <p1>*For Worst Case Scenario</p1>
+
+    <button class="menu-icon" id="menu-icon">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="insertionsort.html">Insertion Sort</a>
+        <a href="bubblesort.html">Bubble Sort</a>
+        <a href="selectionSort.html">Selection Sort</a>
+        <a href="mergesort.html">Merge Sort</a>
+        <a href="quicksort.html">Quick Sort</a>
+        <a href="heapsort.html">Heap Sort</a>
+        <a href="radixcount.html">Radix Sort</a>
+        <a href="countsort.html">Count Sort</a>
+        <a href="bucketsort.html">Bucket Sort</a>
+        <a href="empirical.html">Empirical Analysis</a>
+    </div>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+
+        menuIcon.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+
+        // sidebar closed when clicked outside the
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+
+    <br><br><br><br>
+
+    <div id="result_table"></div>
+
+    <button id="playButton" onclick="size100()" class="play-button" style="top: 225px;"></button>
+    <button id="playButton2" onclick="size500()" class="play-button" style="top: 275px;"></button>
+
+    <button id="playButton3" onclick="size1000()" class="play-button" style="top: 325px;"></button>
+    <button id="playButton4" onclick="size5000()" class="play-button" style="top: 375px;"></button>
+
+    <button id="playButton5" onclick="size10000()" class="play-button" style="top: 425px;"></button>
+    <button id="playButton6" onclick="size50000()" class="play-button" style="top: 475px;"></button>
+
+    <button id="playButton7" onclick="size100000()" class="play-button" style="top: 525px;"></button>
+    
+    <div class="graph-container">
+        <button id="drawGraph" onclick="graph()" class="graphbutton">Generate Graph</button>
+    </div>
+
+    <p id="Nan_explanation"></p>
+
+    <canvas id="sortChart"></canvas>
+
+    <br><br>
+    
+
+    <script src="expScript.js"></script>
+
+</body>
+</html>

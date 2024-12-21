@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* CSS to make the body and html elements take up the full screen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevents scrolling */
+        }
+
+        /* Style for the GIF */
+        .fullscreen-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Full width of the viewport */
+            height: 100vh; /* Full height of the viewport */
+            object-fit: cover; /* Ensures the GIF covers the area */
+        }
+        .header {
+            padding: 3px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            opacity: 70%;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: l;
+            text-align: center;
+        }
+        .sidebar {
+            opacity: 65%;
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 250px;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            padding-top: 60px;
+            padding-left: 20px;
+            transition: 0.3s ease-in-out;
+            z-index: 2000;
+            border-right: 4px solid rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            font-family:cursive;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 5px 0;
+            transition: background-color 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1500;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+    <button class="menu-icon" id="menu-icon">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="insertionsort.html">Insertion Sort</a>
+        <a href="bubblesort.html">Bubble Sort</a>
+        <a href="selectionSort.html">Selection Sort</a>
+        <a href="mergesort.html">Merge Sort</a>
+        <a href="quicksort.html">Quick Sort</a>
+        <a href="heapsort.html">Heap Sort</a>
+        <a href="radixcount.html">Radix Sort</a>
+        <a href="countsort.html">Count Sort</a>
+        <a href="bucketsort.html">Bucket Sort</a>
+        <a href="empirical.html">Empirical Analysis</a>
+    </div>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+
+        menuIcon.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+        });
+
+        // sidebar closed when clicked outside the
+        document.addEventListener('click', function(event) {
+            if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+
+
+    <!-- Replace 'your-gif-url.gif' with the actual URL of your GIF -->
+    
+    <img src="https://gist.githubusercontent.com/vininjr/d29bb07bdadb41e4b0923bc8fa748b1a/raw/88f20c9d749d756be63f22b09f3c4ac570bc5101/programming.gif" alt="Fullscreen GIF" class="fullscreen-gif">
+</body>
+</html>
